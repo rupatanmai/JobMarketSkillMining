@@ -392,7 +392,9 @@ export const JobExplorerPage: React.FC = () => {
             <div>
               <h4 className="text-xs font-bold text-slate-300 uppercase tracking-wider mb-2">Job Description:</h4>
               <p className="text-xs text-slate-300 whitespace-pre-line leading-relaxed bg-slate-950/40 p-4 rounded-xl border border-slate-800 font-sans">
-                {selectedJob.description}
+                {selectedJob.description.length >= 300 && !selectedJob.description.endsWith('…')
+                  ? `${selectedJob.description}…`
+                  : selectedJob.description}
               </p>
             </div>
           </div>

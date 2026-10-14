@@ -60,7 +60,7 @@ const ROUTES: RouteConfig[] = [
   {
     path: '/trend-mining',
     title: 'Time-Series Skill Trend Mining',
-    subtitle: 'Skill demand by posting date (demo)',
+    subtitle: 'Skill demand by collection date (Dec 2023)',
     component: TrendMiningPage
   },
   {

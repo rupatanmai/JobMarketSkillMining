@@ -241,7 +241,7 @@ export const DashboardPage: React.FC = () => {
             <div>
               <h3 className="text-lg font-bold text-white flex items-center gap-2">
                 <TrendingUp className="w-5 h-5 text-emerald-400" />
-                Skill Demand by Scrape Date (Dec 2023)
+                Skill Demand by Collection Date (Dec 2023)
               </h3>
               <p className="text-xs text-slate-400 mt-0.5">Percentage of postings by date requiring key skills</p>
             </div>
@@ -253,7 +253,7 @@ export const DashboardPage: React.FC = () => {
           {/* Amber Warning Box */}
           <div className="mb-4 rounded-xl p-3 border border-amber-500/30 bg-amber-500/10 text-amber-200 text-xs flex items-start gap-2.5">
             <AlertTriangle className="w-4 h-4 text-amber-400 shrink-0 mt-0.5" />
-            <span>Only 3 scrape dates (17, 20, 25 Dec 2023), one per source file. Differences reflect source datasets, not real trends.</span>
+            <span>Only 3 collection dates (17, 20, 25 Dec 2023), one per source file. Differences reflect source datasets, not real trends.</span>
           </div>
 
           <div className="h-72 w-full">

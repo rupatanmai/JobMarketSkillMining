@@ -218,7 +218,7 @@ export const SkillGapPage: React.FC = () => {
             <AlertCircle className="w-5 h-5 text-rose-400" />
             <h3 className="text-base font-bold text-white">Missing In-Demand Skills ({gapResults.missingSkills.length})</h3>
           </div>
-          <p className="text-xs text-slate-400">High-frequency skills requested by employers in this domain that are absent from your profile:</p>
+          <p className="text-xs text-slate-400">Skills requested in this role's postings, ranked by frequency, that are absent from your profile:</p>
 
           <div className="flex flex-wrap gap-2">
             {gapResults.missingSkills.length > 0 ? (

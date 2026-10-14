@@ -22,8 +22,8 @@ export const MiningWorkflowPage: React.FC = () => {
       name: 'Job Posting Dataset',
       icon: Database,
       color: '#3b82f6',
-      summary: `Raw ingestion of ${JOB_POSTINGS.length} job posting records containing titles, descriptions, skills, and salaries.`,
-      inputs: ['Raw Job HTML / Text', 'Company Metadata', 'Location Data'],
+      summary: 'Raw ingestion of 3000 LinkedIn job posting records containing titles, companies, locations and descriptions.',
+      inputs: ['Kaggle CSV files (3 LinkedIn datasets)', 'Company Metadata', 'Location Data'],
       processing: 'Parsing CSV records into TypeScript domain objects',
       outputs: [`JOB_POSTINGS: JobPosting[] (${JOB_POSTINGS.length} records)`]
     },
@@ -33,8 +33,8 @@ export const MiningWorkflowPage: React.FC = () => {
       icon: Filter,
       color: '#06b6d4',
       summary: 'Handling missing values, standardizing skill labels, and deduplicating records.',
-      inputs: ['Unstructured text strings', 'Varied currency salary strings'],
-      processing: 'Regex string normalization, salary multiplier calculation, skill canonicalization',
+      inputs: ['Unstructured text strings', 'Metadata attributes (salary: not in source)'],
+      processing: 'Regex string normalization, text cleaning, skill canonicalization',
       outputs: ['Cleaned Dataset', 'Standardized Skill Tokens']
     },
     {
@@ -75,7 +75,7 @@ export const MiningWorkflowPage: React.FC = () => {
       summary: 'Deriving actionable market insights, skill bundles, and temporal demand trajectories.',
       inputs: ['Mined Rules & Clusters', 'Posting Dates'],
       processing: 'Support/Confidence/Lift filtering, historical growth rate calculation',
-      outputs: ['Surging Skills', 'Skill Association Networks', 'Salary Benchmarks']
+      outputs: ['Surging Skills', 'Skill Association Networks', 'Salary Benchmarks (not in source)']
     },
     {
       id: 7,

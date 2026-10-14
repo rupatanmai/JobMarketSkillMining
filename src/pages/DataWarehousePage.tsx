@@ -173,7 +173,7 @@ export const DataWarehousePage: React.FC = () => {
               </div>
               <h4 className="font-extrabold text-base text-white">FACT_JOB_POSTING</h4>
               <p className="text-xs text-blue-300 font-mono mt-1">Central Fact Table</p>
-              <p className="text-[11px] text-slate-400 mt-2">Measures: salary_usd, posting_count</p>
+              <p className="text-[11px] text-slate-400 mt-2">Measures: posting_count (salary_usd: N/A in source)</p>
             </button>
           </div>
 

@@ -59,14 +59,14 @@ export const TrendMiningPage: React.FC = () => {
               Time-Series Skill Trend Mining
             </h2>
             <p className="text-xs text-slate-400 mt-1 max-w-2xl">
-              Skill demand by posting date (demo) across {JOB_POSTINGS.length} technical job postings.
+              Skill demand by collection date (Dec 2023) across {JOB_POSTINGS.length} technical job postings.
             </p>
           </div>
 
-          <div className="flex items-center space-x-2 bg-emerald-500/10 border border-emerald-500/20 px-3 py-2 rounded-xl text-xs text-emerald-300 font-mono">
-            <Zap className="w-4 h-4 text-emerald-400" />
+          <div className="flex items-center space-x-2 bg-amber-500/10 border border-amber-500/20 px-3 py-2 rounded-xl text-xs text-amber-300 font-mono">
+            <Zap className="w-4 h-4 text-amber-400" />
             <span>
-              Top Surging: {topSkill?.skill} ({formatGrowth(topSkill?.growthPercentage)})
+              Largest Source Gap: {topSkill?.skill}
             </span>
           </div>
         </div>
@@ -78,7 +78,7 @@ export const TrendMiningPage: React.FC = () => {
           <div>
             <h3 className="text-lg font-bold text-white flex items-center gap-2">
               <Calendar className="w-5 h-5 text-emerald-400" />
-              Daily Tech Skill Demand Trajectory (%)
+              Skill Demand by Collection Date (%)
             </h3>
             <p className="text-xs text-slate-400">Proportion of job postings specifying key technologies over time</p>
           </div>
