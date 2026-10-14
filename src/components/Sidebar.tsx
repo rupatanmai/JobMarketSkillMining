@@ -117,18 +117,15 @@ export const Sidebar: React.FC<SidebarProps> = ({ isOpen, onClose, isDark, onTog
             <div className="flex items-center justify-between mb-2">
               <span className="text-xs font-semibold text-slate-300 flex items-center gap-1.5">
                 <Sparkles className="w-3.5 h-3.5 text-cyan-400" />
-                Live Dataset
-              </span>
-              <span className="text-[10px] px-1.5 py-0.5 rounded bg-blue-500/20 text-blue-300 font-mono">
-                {JOB_POSTINGS.length} Records
+                Dataset: LinkedIn, Dec 2023
               </span>
             </div>
             <div className="w-full bg-slate-700/50 rounded-full h-1.5 overflow-hidden">
               <div className="bg-gradient-to-r from-cyan-400 to-blue-500 h-full w-full rounded-full" />
             </div>
             <p className="text-[10px] text-slate-400 mt-2 flex items-center justify-between">
-              <span>Updated: March 2026</span>
-              <span className="text-emerald-400 font-medium">Synced</span>
+              <span>Static file</span>
+              <span className="text-slate-400 font-mono">{JOB_POSTINGS.length} Records</span>
             </p>
           </div>
         </div>

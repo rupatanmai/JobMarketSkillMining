@@ -39,7 +39,7 @@ export const AssociationMiningPage: React.FC = () => {
               Association Rule Mining (Apriori Engine)
             </h2>
             <p className="text-xs text-slate-400 mt-1 max-w-2xl">
-              Discover co-occurrence relationships and skill bundles (e.g. <em>Python + SQL ➔ Pandas</em>) mined from {JOB_POSTINGS.length} job posting transactions. Adjust support and confidence parameters to recalculate rules dynamically.
+              Discover co-occurrence relationships and skill bundles (e.g. <em>Python + SQL ➔ Spark</em>) mined from {JOB_POSTINGS.length} job posting transactions. Adjust support and confidence parameters to recalculate rules dynamically.
             </p>
           </div>
 

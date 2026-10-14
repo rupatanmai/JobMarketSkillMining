@@ -27,6 +27,12 @@ export const ClassificationPage: React.FC = () => {
     return classifyJobs(JOB_POSTINGS, selectedAlgo);
   }, [selectedAlgo]);
 
+  const formatCategoryShort = (cat: string): string => {
+    if (cat === 'Data Analytics') return 'Data An.';
+    if (cat === 'Data Science & AI') return 'Data Sci.';
+    return cat.replace(' Development', '');
+  };
+
   const distributionComparison = useMemo(() => {
     return metrics.categories.map(cat => {
       const actualCount = metrics.confusionMatrix
@@ -36,7 +42,7 @@ export const ClassificationPage: React.FC = () => {
         .filter(c => c.predicted === cat)
         .reduce((sum, c) => sum + c.count, 0);
       return {
-        category: cat.replace(' Development', '').replace(' Science & AI', ' DS/AI'),
+        category: formatCategoryShort(cat),
         Actual: actualCount,
         Predicted: predictedCount
       };
@@ -121,7 +127,7 @@ export const ClassificationPage: React.FC = () => {
             <h3 className="text-3xl font-extrabold text-emerald-400 mt-1 font-mono">
               {(metrics.f1Score * 100).toFixed(1)}%
             </h3>
-            <p className="text-[11px] text-slate-400 mt-1">Harmonic Mean</p>
+            <p className="text-[11px] text-slate-400 mt-1">Mean of per-class F1</p>
           </div>
           <div className="w-12 h-12 rounded-2xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400 font-bold text-lg">
             F1
@@ -149,7 +155,7 @@ export const ClassificationPage: React.FC = () => {
                     <th className="p-2 text-left text-slate-500 font-semibold">Actual \ Pred</th>
                     {metrics.categories.map((cat) => (
                       <th key={cat} className="p-2 font-semibold text-slate-300 text-[10px] truncate max-w-[70px]">
-                        {cat.split(' ')[0]}
+                        {formatCategoryShort(cat)}
                       </th>
                     ))}
                   </tr>

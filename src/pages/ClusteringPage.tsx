@@ -144,10 +144,26 @@ export const ClusteringPage: React.FC = () => {
 
         <div className="h-80 w-full">
           <ResponsiveContainer width="100%" height="100%">
-            <ScatterChart margin={{ top: 20, right: 20, bottom: 20, left: 20 }}>
+            <ScatterChart margin={{ top: 20, right: 20, bottom: 25, left: 25 }}>
               <CartesianGrid strokeDasharray="3 3" stroke="#334155" />
-              <XAxis type="number" dataKey="x" name="Skill Component 1" stroke="#94a3b8" fontSize={11} tickLine={false} />
-              <YAxis type="number" dataKey="y" name="Skill Component 2" stroke="#94a3b8" fontSize={11} tickLine={false} />
+              <XAxis
+                type="number"
+                dataKey="x"
+                name="Component 1"
+                stroke="#94a3b8"
+                fontSize={11}
+                tickLine={false}
+                label={{ value: 'Component 1', position: 'insideBottom', offset: -10, fill: '#94a3b8', fontSize: 11 }}
+              />
+              <YAxis
+                type="number"
+                dataKey="y"
+                name="Component 2"
+                stroke="#94a3b8"
+                fontSize={11}
+                tickLine={false}
+                label={{ value: 'Component 2', angle: -90, position: 'insideLeft', offset: -10, fill: '#94a3b8', fontSize: 11 }}
+              />
               <Tooltip
                 contentStyle={{ backgroundColor: '#0f172a', borderColor: '#334155', borderRadius: '12px', color: '#fff' }}
                 cursor={{ strokeDasharray: '3 3' }}

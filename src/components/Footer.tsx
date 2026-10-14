@@ -26,7 +26,7 @@ export const Footer: React.FC = () => {
             </h4>
             <ul className="space-y-1 text-slate-400">
               <li>• Apriori Association Rule Mining (Support, Confidence, Lift)</li>
-              <li>• K-Means Vector Clustering (Cosine / Euclidean space)</li>
+              <li>• K-Means Vector Clustering (Euclidean feature space)</li>
               <li>• Role Classification (KNN k=5, Decision Trees, Naive Bayes)</li>
               <li>• Time-Series Skill Demand Trend Extraction</li>
             </ul>

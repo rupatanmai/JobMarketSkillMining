@@ -11,7 +11,7 @@ The primary objective of **JobIntel AI** is to solve the misalignment between ac
 
 Key capabilities include:
 1. **Automated NLP Skill Extraction**: Extracting technical tokens from job descriptions.
-2. **Apriori Association Mining**: Discovering co-occurring skill bundles (e.g., $Python + SQL \Rightarrow Pandas$).
+2. **Apriori Association Mining**: Discovering co-occurring skill bundles (e.g., $Python + SQL \Rightarrow Spark$).
 3. **K-Means Vector Clustering**: Grouping job postings into spatial clusters based on skill vectors.
 4. **Machine Learning Classification**: Predicting job-role categories with KNN, Decision Trees, and Naive Bayes models.
 5. **Temporal Trend Mining**: Tracking emerging, steady, and declining technical skills over time.

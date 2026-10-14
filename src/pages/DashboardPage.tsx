@@ -10,7 +10,8 @@ import {
   DollarSign,
   PieChart as PieIcon,
   BarChart2,
-  ChevronRight
+  ChevronRight,
+  AlertTriangle
 } from 'lucide-react';
 import {
   BarChart,
@@ -80,7 +81,7 @@ export const DashboardPage: React.FC = () => {
               <h3 className="text-3xl font-extrabold text-white mt-1 font-mono">{JOB_POSTINGS.length}</h3>
               <p className="text-xs text-emerald-400 mt-2 flex items-center gap-1 font-medium">
                 <ArrowUpRight className="w-3.5 h-3.5" />
-                <span>+100% Real Dataset</span>
+                <span>Real LinkedIn data</span>
               </p>
             </div>
             <div className="w-12 h-12 rounded-2xl bg-blue-500/10 border border-blue-500/20 flex items-center justify-center text-blue-400">
@@ -127,21 +128,16 @@ export const DashboardPage: React.FC = () => {
 
         {/* Stat 4 */}
         <div className="glass-card rounded-2xl p-5 border border-slate-800 bg-slate-900/60 relative overflow-hidden group">
-          <div className="absolute top-0 right-0 w-32 h-32 bg-emerald-500/10 rounded-full blur-2xl group-hover:bg-emerald-500/20 transition-all" />
+          <div className="absolute top-0 right-0 w-32 h-32 bg-amber-500/10 rounded-full blur-2xl group-hover:bg-amber-500/20 transition-all" />
           <div className="flex items-center justify-between">
-            <div>
-              <p className="text-xs font-semibold text-slate-400 uppercase tracking-wider">Top Surging Skill</p>
-              <h3 className="text-2xl font-extrabold text-white mt-1 tracking-tight truncate">{emergingTop?.skill || 'PyTorch'}</h3>
-              <p className="text-xs text-emerald-400 mt-2 flex items-center gap-1 font-medium">
-                <TrendingUp className="w-3.5 h-3.5" />
-                <span>
-                  {emergingTop?.growthPercentage !== null && emergingTop?.growthPercentage !== undefined
-                    ? `${emergingTop.growthPercentage > 1000 ? '>1000%' : `+${emergingTop.growthPercentage}%`} Growth Trend`
-                    : 'New'}
-                </span>
+            <div className="min-w-0 flex-1 mr-2">
+              <p className="text-xs font-semibold text-slate-400 uppercase tracking-wider">Largest Source Gap</p>
+              <h3 className="text-2xl font-extrabold text-white mt-1 tracking-tight truncate">{emergingTop?.skill || 'CSS'}</h3>
+              <p className="text-[11px] text-amber-400/90 mt-1.5 flex items-center gap-1 font-medium">
+                <span>Source artefact, not a trend</span>
               </p>
             </div>
-            <div className="w-12 h-12 rounded-2xl bg-emerald-500/10 border border-emerald-400/20 flex items-center justify-center text-emerald-400">
+            <div className="w-12 h-12 rounded-2xl bg-amber-500/10 border border-amber-400/20 flex items-center justify-center text-amber-400 shrink-0">
               <Zap className="w-6 h-6" />
             </div>
           </div>
@@ -241,17 +237,23 @@ export const DashboardPage: React.FC = () => {
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
         {/* Monthly Skill Demand Trends */}
         <div className="glass-card rounded-2xl p-6 border border-slate-800 bg-slate-900/60">
-          <div className="flex items-center justify-between mb-4">
+          <div className="flex items-center justify-between mb-3">
             <div>
               <h3 className="text-lg font-bold text-white flex items-center gap-2">
                 <TrendingUp className="w-5 h-5 text-emerald-400" />
-                Skill Demand by Posting Date (Demo)
+                Skill Demand by Scrape Date (Dec 2023)
               </h3>
               <p className="text-xs text-slate-400 mt-0.5">Percentage of postings by date requiring key skills</p>
             </div>
             <Link to="/trend-mining" className="text-xs font-semibold text-emerald-400 hover:text-emerald-300 flex items-center gap-1">
               Trend Mining <ChevronRight className="w-3.5 h-3.5" />
             </Link>
+          </div>
+
+          {/* Amber Warning Box */}
+          <div className="mb-4 rounded-xl p-3 border border-amber-500/30 bg-amber-500/10 text-amber-200 text-xs flex items-start gap-2.5">
+            <AlertTriangle className="w-4 h-4 text-amber-400 shrink-0 mt-0.5" />
+            <span>Only 3 scrape dates (17, 20, 25 Dec 2023), one per source file. Differences reflect source datasets, not real trends.</span>
           </div>
 
           <div className="h-72 w-full">
